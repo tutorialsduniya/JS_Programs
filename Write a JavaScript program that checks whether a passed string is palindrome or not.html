@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Write a JavaScript program that checks whether a passed string is palindrome or not.</title>
+    </head>
+    <body>
+        <form  onsubmit="Pali()">
+            <label for="str">Enter a string</label>
+            <input type="text" name="str" id="str" /><br/>
+            <input type="submit" value="check string" />
+            <p id="result"></p>
+        </form>
+        <script>
+            function Pali(){
+                var str1 = document.getElementById("str").value;
+                str1.toLowerCase();
+                str1.split(' ').join('');
+                var rev = str1.split('').reverse().join('');
+                if(str1 == rev){
+                    document.getElementById("result").innerHTML = "Srting is Palindrome.";
+                }
+                else
+                    document.getElementById("result").innerHTML = "Srting is NOT Palindrome.";
+            }
+        </script>
+    </body>
+</html>

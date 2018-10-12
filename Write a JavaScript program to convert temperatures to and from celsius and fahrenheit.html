@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Write a JavaScript program to convert temperatures to and from celsius and fahrenheit.</title>
+    </head>
+    <body>
+        <form>
+            <label for="temp">Enter temperature</label>
+            <input type="number" name="temp" id="temp" required="required" /><br/>
+            <input type="button" onclick="cTemp()" value="Convert fahrenheit to celcius" />
+            <input type="button" onclick="fTemp()" value="Convert celcius to fahrenheit" />
+        </form>
+        <p id="dispTemp"></p>
+        <script>
+            function cTemp(){
+                fahr = parseInt(document.getElementById("temp").value);
+                c = (fahr-32) * (5/9);
+                document.getElementById("dispTemp").innerHTML = "The temperature in celcius is : " + c + "\xB0C";
+            }
+            function fTemp(){
+                celc = parseInt(document.getElementById("temp").value);
+                f = celc * (9/5) + 32;
+                document.getElementById("dispTemp").innerHTML = "The temperature in fahrenheit is : " + f + "\xB0F";
+            }
+        </script>
+    </body>
+</html>

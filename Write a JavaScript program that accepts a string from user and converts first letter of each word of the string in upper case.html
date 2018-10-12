@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Write a JavaScript program that accepts a string from user and converts first letter of each word of the string in upper case.</title>
+    </head>
+    <body>
+        <form onsubmit="convertString()">
+            <label for="str">Enter a string</label>
+            <input type="text" name="str" id="str" required="required" /><br/>
+            <input type="submit" value="Convert" />
+        </form>
+        <p id="printStr"></p>
+        <script>
+            function convertString(){
+                var str = document.getElementById("str").value;
+                var arr = str.split('');
+                var newArr = new Array();
+                for(var i=0; i<arr.length; i++){
+                    newArr.push(arr[i].charAt(0).toUpperCase() + arr[i].slice(1));
+                }
+                str = newArr.join('');
+                document.getElementById("printStr").innerHTML = str;
+            }
+        </script>
+    </body>
+</html>

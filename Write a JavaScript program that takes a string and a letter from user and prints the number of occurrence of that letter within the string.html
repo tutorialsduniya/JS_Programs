@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Write a JavaScript program that takes a string and a letter from user and prints the number of occurrence of that letter within the string.</title>
+    </head>
+    <body>
+        <form onsubmit="countLetter()">
+            <label for="str">Enter a string</label>
+            <input type="text" name="str" id="str" required="required" /><br/>
+            <label for="letter">Enter the letter to be searched</label>
+            <input type="text" name="letter" id="letter" required="required" /><br/>
+            <input type="submit" value="Count occurrence" />
+            <p id="occurrence"></p>
+        </form>
+        <script>
+            function countLetter(){
+                var str = document.getElementById("str").value;
+                var letter = document.getElementById("letter").value;
+                var c=0;
+                for(var i=0; i<str.length; i++){
+                    if(str.charAt(i) === letter){
+                        c += 1;
+                    }
+                }
+                document.getElementById("occurrence").innerHTML = "The number of occurrences of letter " + letter + " in string " + str + " is " + c;
+            }
+        </script>
+    </body>
+</html>

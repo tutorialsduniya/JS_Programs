@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Write a JavaScript program that returns a passed string with letters in alphabetical order.</title>
+    </head>
+    <body>
+        <form onsubmit="arrangeString()" >
+            <label for="str">Enter a string </label>
+            <input type="text" name="str" id="str" required="required" /><br/>
+            <input type="submit" value="Arrange" />
+            <p id="result"></p>
+        </form>
+        <script>
+            function arrangeString(){
+                var str = document.getElementById("str").value;
+                var newStr = str.split('').sort().join('');
+                document.getElementById("result").innerHTML = "String in alphabetical order : " + newStr;
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Write a JavaScript program to find the first non repeated character in a user entered string.</title>
+    </head>
+    <body>
+        <form onsubmit="checkString()">
+            <label for="str">Enter a string</label>
+            <input type="text" name="str" id="str" required="required" /><br/>
+            <input type="submit" value="Check String" />
+        </form>
+        <p id="firstChar"></p>
+        <script>
+            function checkString(){
+                var str = document.getElementById("str").value;
+                var arr = str.split('');
+                var chr = ''; 
+                var count = 0;
+                for(var i=0; i<str.length; i++){
+                    count = 0;
+                    for(var j=0; j<str.length; j++){
+                        if(arr[i] === arr[j]){
+                            count++;
+                        }
+                    }
+                    if(count<2){
+                        chr = arr[i];
+                        break;
+                    }
+                }
+                if(chr != ''){
+                    document.getElementById("firstChar").innerHTML = "First non repeated character is : " + chr;
+                }
+                else 
+                    document.getElementById("firstChar").innerHTML = "There is no non repeatable character in the string.";
+                }
+        </script>
+    </body>
+</html>

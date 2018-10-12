@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Write a JavaScript program to display the current day and time</title>
+    </head>
+    <body>
+        <p>The current date and time is as follows:</p>
+        <p id="dateTime"></p>
+        
+        <script>
+            var today = new Date();
+            var day = today.getDay();
+            var days = ["Sunday", "Monday", "Tuesday", "Wednesday ", "Thursday", "Friday", "Saturday"];
+            var hour = today.getHours();
+            var minute = today.getMinutes();
+            var second = today.getSeconds();
+            var prepand = (hour >= 12)? " PM ":" AM ";
+            hour = (hour >= 12)? hour - 12: hour;
+            console.log("Current Time : "+hour + prepand + " : " + minute + " : " + second);
+            document.getElementById("dateTime").innerHTML= "Today is : " + days[day] + " and Current time is : " + hour + prepand + " : " + minute + " : " + second;
+        </script>
+    </body>
+</html>

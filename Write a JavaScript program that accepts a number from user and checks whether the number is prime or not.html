@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Write a JavaScript program that accepts a number from user and checks whether the number is prime or not.</title>
+    </head>
+    <body>
+        <form onsubmit="checkPrime()" >
+            <label for="num">Enter a number</label>
+            <input type="number" name="num" id="num" required="required" /><br/>
+            <input type="submit" value="check prime" />
+            <p id="result"></p>
+        </form>
+        <script>
+            function checkPrime(){
+                var n = parseInt(document.getElementById("num").value);
+                if(n<1){
+                    document.getElementById("result").innerHTML = "Please enter a natural number.";
+                }
+                else if(n==1){
+                    document.getElementById("result").innerHTML = "Number " + n + " is NOT a prime number.";
+                }
+                else if(n==2){
+                    document.getElementById("result").innerHTML = "Number " + n + " is a prime number.";
+                }
+                else{
+                    for(var i=2; i<n; i++){
+                        if(n%i==0){
+                            document.getElementById("result").innerHTML = "Number " + n + " is NOT a prime number.";
+                            break;
+                        }
+                    }
+                    if(i==n){
+                    document.getElementById("result").innerHTML = "Number " + n + " is a prime number.";
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>

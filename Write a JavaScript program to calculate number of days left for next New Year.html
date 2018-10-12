@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Write a JavaScript program to calculate number of days left for next New Year.</title>
+    </head>
+    <body>
+        <button onclick="calcDays()">Click here to calculate no. of days to New Year</button>
+        <p id="dispDays"></p>
+        <script>
+            function calcDays(){
+                var today = new Date();
+                var ny = new Date(today.getFullYear(),0,1);
+                ny.setFullYear(ny.getFullYear() + 1);
+                if (today.getMonth() == 0 && today.getDate() == 1){
+                    document.getElementById("dispDays").innerHTML = "Today itself is a ney year.<br/>365 days to go for next new year.";
+                }                
+                else{
+                    var oneDay = 1000*60*60*24;
+                    document.getElementById("dispDays").innerHTML = (Math.ceil((ny.getTime() - today.getTime()) / (oneDay)) + " days to go for New Year.");
+                }
+            }
+        </script>
+    </body>
+</html>

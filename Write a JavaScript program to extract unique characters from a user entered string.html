@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Write a JavaScript program to extract unique characters from a user entered string.</title>
+    </head>
+    <body>
+        <form onsubmit="uniqueChar()">
+            <label for="str">Enter a string</label>
+            <input type="text" name="str" id="str" required="required" /><br/>
+            <input type="submit" value="Extract Unique" />
+            <p id="result"></p>
+        </form>
+        <script>
+            function uniqueChar(){
+                var str = document.getElementById("str").value;
+                newStr = "";
+                for(var i=0; i<str.length; i++){
+                    if(newStr.indexOf(str.charAt(i)) == -1){
+                        newStr += str[i];
+                    }
+                }
+                document.getElementById("result").innerHTML = newStr;
+            }
+        </script>
+    </body>
+</html>

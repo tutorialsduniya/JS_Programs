@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Write a JavaScript program to find the area of a triangle by taking length of sides by the user.</title>
+    </head>
+    <body>
+        <p>Enter length of sides of the triangle.</p>
+        <form onsubmit="CalArea()" >
+            <label for="side1">Side1</label>
+            <input type="number" name="side1" id="side1" required="required"/><br/>
+            <label for="side1">Side2</label>
+            <input type="number" name="side2" id="side2" required="required"/><br/>
+            <label for="side1">Side3</label>
+            <input type="number" name="side3" id="side3" required="required"/><br/>
+            <input type="submit" value="Calculate Area" />
+        </form>
+        <p id="printArea"></p>
+        <script>
+            function CalArea(){
+                var s1 = parseInt(document.getElementById("side1").value);
+                var s2 = parseInt(document.getElementById("side2").value);
+                var s3 = parseInt(document.getElementById("side3").value);
+                if(s1+s2>s3 || s2+s3>s1 || s1+s3>s2){
+                    document.getElementById("printArea").innerHTML = "Please enter valid sides of triangle";
+                }
+                else{
+                    var semiPerimeter = (s1+s2+s3)/2;
+                    var area = Math.sqrt(semiPerimeter*((semiPerimeter-s1)*(semiPerimeter-s2)*(semiPerimeter-s3)));
+                    document.getElementById("printArea").innerHTML = "The sides are Side1 : " + s1 + ", Side2 : " + s2 + ", Side3 : " + s3 + "<br/>The perimeter of the triangle is : " + 2*semiPerimeter + "<br/>The area of the triangle is : " + area;
+                }
+            }
+        </script>
+    </body>
+</html>

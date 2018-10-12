@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Write a JavaScript program to get the current date in different formats.</title>
+    </head>
+    <body>
+        <p>The current date in different formats is as follows:</p>
+        <p id="dateFormats"></p>
+        <script>
+            var today = new Date();
+            var dd = today.getDate();
+            var mm = today.getMonth()+1; 
+            var yyyy = today.getFullYear();
+            if(dd<10) 
+            {
+                dd='0'+dd;
+            }
+            if(mm<10) 
+            {
+                mm='0'+mm;
+            }
+            var format1 = mm+'-'+dd+'-'+yyyy;
+            var format2 = mm+'/'+dd+'/'+yyyy;
+            var format3 = dd+'-'+mm+'-'+yyyy;
+            var format4 = dd+'/'+mm+'/'+yyyy;
+            document.getElementById("dateFormats").innerHTML = format1 +"<br/>" + format2 +"<br/>" + format3 +"<br/>" + format4;
+        </script>
+    </body>
+</html>

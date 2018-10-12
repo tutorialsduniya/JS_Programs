@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Write a JavaScript program to create a new string from a given string by changing the position of first and last characters.</title>
+    </head>
+    <body>
+        <form onsubmit="newString()">
+            <label for="str">Enter a string : </label>
+            <input type="text" name="str" id="str" /><br/>
+            <input type="submit" value="Create new string" />
+        </form>
+        <p id="newStr"></p>
+        <script>
+            function newString(){
+                var s = document.getElementById("str").value;
+                len = s.length-1;
+                var midString = s.substring(1,len);
+                document.getElementById("newStr").innerHTML = "New string is " + s.charAt(len) + midString + s.charAt(0);
+            }
+        </script>
+    </body>
+</html>

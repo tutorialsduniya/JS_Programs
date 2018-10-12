@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Write a JavaScript program to find a specific day between 2 user entered years.</title>
+    </head>
+    <body>
+        <form onsubmit="checkDay()" >
+            <label for="day">Find day : </label>
+            <input type="text" name="day" id="day" required="required" /><br/>            
+            <label for="year1">Year1 : </label>
+            <input type="number" name="year1" id="year1" required="required" /><br/>
+            <label for="year2">Year2 : </label>
+            <input type="number" name="year2" id="year2" required="required" /><br/>
+            <input type="submit" value="Check Day" />
+        </form>
+        <p id="dispYears"></p>
+        <script>
+            function checkDay(){
+                var d = document.getElementById("day").value;
+                a = toLowerCase(d);
+//                var y1 = parseInt(document.getElementById("year1").value);
+//                var y2 = parseInt(document.getElementById("year2").value);
+/*                switch(d){
+                    case "sunday": d = Number("0") break;
+                    case "monday": d = Number("1") break;
+                    case "tuesday": d = Number("2") break;
+                    case "wednesday": d = Number("3") break;
+                    case "thursday": d = Number("4") break;
+                    case "friday": d = Number("5") break;
+                    case "saturday": d = Number("6") break;
+                    default: alert("Please Enter a valid day."); exit(0);
+                }
+                document.getElementById("dispYears").innerHTML = y1;
+*/
+alert(a);                
+            }
+        </script>
+    </body>
+</html>
